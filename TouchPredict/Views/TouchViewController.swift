@@ -1,0 +1,68 @@
+//
+//  ViewController.swift
+//  FoodTracker
+//
+//  Created by Jordan Lewis on 4/19/19.
+//  Copyright © 2019 Jordan Lewis. All rights reserved.
+//
+
+import UIKit
+import Foundation
+
+class TouchViewController: UIViewController {
+    var activeUser: User = DataHandler.sharedManager.getActiveUser()
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var touchLabel: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var currentTouchLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.saveButton.isHidden = true
+        self.testButton.isHidden = true
+        updateData()
+        userLabel.text = "Active User: " + DataHandler.sharedManager.getActiveUser().name
+        _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) {
+            timer in
+    
+            self.dataTimer(timer: timer)
+            
+        }
+    }
+    func dataTimer(timer:Timer) {
+        DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
+            DispatchQueue.main.async {
+                self.updateData()
+            }
+        }
+    }
+    
+    func updateData() {
+        touchLabel.text = "Touches: " + String(activeUser.touches.count)
+        dataLabel.text = String(format: "AvgRadius: %.2f AvgForce: %.2f", activeUser.avgRadius, activeUser.avgForce)
+        if activeUser.touches.count > 1 {
+            currentTouchLabel.text = String(format: "Last touch - Radius: %.2f Force: %.2f", Float(activeUser.touches.last!.radius), Float(activeUser.touches.last!.force))
+            self.saveButton.isHidden = false
+            if DataHandler.sharedManager.users.count > 1{
+                self.testButton.isHidden = false
+            }
+        }
+        
+    }
+    
+    @IBAction func saveData(_ sender: UIButton) {
+        if activeUser.touches.count > 1{
+            performSegue(withIdentifier: "saveDataSegue", sender:(Any).self)
+        }
+    }
+    
+    @IBAction func test(_ sender: UIButton) {
+        if activeUser.touches.count > 1 && DataHandler.sharedManager.users.count > 1{
+            performSegue(withIdentifier: "testSegue", sender:(Any).self)
+        }
+    }
+    
+}
+
