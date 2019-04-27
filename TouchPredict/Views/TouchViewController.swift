@@ -16,7 +16,6 @@ class TouchViewController: UIViewController {
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var testButton: UIButton!
-    @IBOutlet weak var currentTouchLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +41,7 @@ class TouchViewController: UIViewController {
     func updateData() {
         touchLabel.text = "Touches: " + String(activeUser.touches.count)
         dataLabel.text = String(format: "AvgRadius: %.2f AvgForce: %.2f", activeUser.avgRadius, activeUser.avgForce)
-        if activeUser.touches.count > 1 {
-            currentTouchLabel.text = String(format: "Last touch - Radius: %.2f Force: %.2f", Float(activeUser.touches.last!.radius), Float(activeUser.touches.last!.force))
+        if activeUser.touches.count > DataHandler.sharedManager.mintouches {
             self.saveButton.isHidden = false
             if DataHandler.sharedManager.users.count > 1{
                 self.testButton.isHidden = false

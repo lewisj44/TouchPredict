@@ -16,10 +16,15 @@ class DataHandler{
     var activeUser : User
     var predictedUser: User
     var userID : Int = 0
+    var mintouches: Int = 50
+    var sampleRate: Int = 25
+    
     
     init(){
         activeUser = User(name: "placeholder", id: 0)
         predictedUser = User(name: "Unknown", id: -1)
+        mintouches = 50
+        sampleRate = 25
     }
     
     class var sharedManager: DataHandler {

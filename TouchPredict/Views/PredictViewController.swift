@@ -17,9 +17,6 @@ import Foundation
 
 class PredictViewController: UIViewController {
     //MARK: Properties
-    
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var predictionStatsLabel: UILabel!
     @IBOutlet weak var predictionConfLabel: UILabel!
@@ -48,6 +45,7 @@ class PredictViewController: UIViewController {
         DataHandler.sharedManager.getPredictedUser().reset()
         performSegue(withIdentifier: "homeFromAISegue", sender:(Any).self)
     }
+    
     
     func dataTimer(timer:Timer) {
         DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
@@ -107,13 +105,6 @@ class PredictViewController: UIViewController {
     func touchAdded()->Bool{
         return self.previousSize != DataHandler.sharedManager.getPredictedUser().touches.count
     }
-    
-    @IBAction func sliderValueChanged(_ sender: Any) {
-        rateLabel.text = "Sample Rate: " + Int(slider.value).description
-        samplingRate = Int(slider.value)
-    }
 }
-
-
 
 

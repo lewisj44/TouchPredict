@@ -34,6 +34,7 @@ class NameViewController: UIViewController, UITextFieldDelegate{
         alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
     }
     
+   
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?) {
         self.view.endEditing(true)
@@ -55,6 +56,7 @@ class NameViewController: UIViewController, UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
     }
+
     
     @IBAction func saveUser(_ sender: UIButton) {
         let _name: String = nameTextField.text!
