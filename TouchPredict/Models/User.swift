@@ -69,6 +69,8 @@ class User{
         for touch in touches{
             let r_diff = (touch.radius - avgRadius)/r_stdDev
             let f_diff = (touch.force - avgForce)/f_stdDev
+            print(name + " " + r_diff.description)
+            print(name + " " + f_diff.description)
             let distance = sqrt(square(x: r_diff) + square(x: f_diff))
             sigmaSum += distance
             if distance > maxDist { maxDist = distance }
