@@ -7,7 +7,8 @@
 //
 import  UIKit
 import Foundation
-class TouchData {
+
+class Touch{
     var radius: Float
     var force: Float
     var id: Int

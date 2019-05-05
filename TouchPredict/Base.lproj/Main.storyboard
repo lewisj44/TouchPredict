@@ -275,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="431" y="-1473"/>
         </scene>
-        <!--Name View Controller-->
+        <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="NameViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="UserViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="-1015.2" y="-715.59220389805103"/>
         </scene>
-        <!--Touch View Controller-->
+        <!--Capture View Controller-->
         <scene sceneID="OiR-VD-JtP">
             <objects>
-                <viewController storyboardIdentifier="Touch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KUH-Ka-pjL" customClass="TouchViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Touch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KUH-Ka-pjL" customClass="CaptureViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cwa-7q-KRO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,7 +556,7 @@
         <!--Predict View Controller-->
         <scene sceneID="DNF-5M-LIf">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="tCv-WT-8NS" customClass="PredictViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tCv-WT-8NS" customClass="PredictViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XDe-pt-gfD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -699,7 +699,7 @@
             <objects>
                 <viewController id="qSo-BA-9Hw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pHn-vn-Sex">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="440"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="373"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14902611301369864" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -750,9 +750,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fGC-g5-lGd"/>
-        <segue reference="qPM-cq-MGb"/>
-        <segue reference="pUm-MS-9Gw"/>
-        <segue reference="Znj-3b-15a"/>
+        <segue reference="Qgf-rR-lDs"/>
+        <segue reference="FfZ-lh-5ui"/>
+        <segue reference="CKb-NX-Vhb"/>
         <segue reference="rRi-Rm-5C3"/>
     </inferredMetricsTieBreakers>
 </document>

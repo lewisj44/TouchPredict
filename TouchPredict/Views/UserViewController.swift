@@ -18,7 +18,7 @@ extension StringProtocol {
     }
 }
 
-class NameViewController: UIViewController, UITextFieldDelegate{
+class UserViewController: UIViewController, UITextFieldDelegate{
     //MARK: Properties
     @IBOutlet weak var loadButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -62,19 +62,19 @@ class NameViewController: UIViewController, UITextFieldDelegate{
         let _name: String = nameTextField.text!
         nameString = _name
         nameString = nameString.firstCapitalized.trimmingCharacters(in: .whitespacesAndNewlines)
-        if DataHandler.sharedManager.userNameExists(userName: nameString){
-            DataHandler.sharedManager.activeUser = DataHandler.sharedManager.users[nameString]!
+        if UserData.sharedManager.userNameExists(userName: nameString){
+            UserData.sharedManager.activeUser = UserData.sharedManager.users[nameString]!
             performSegue(withIdentifier: "startCaptureSegue", sender:(Any).self)
         }
         else if(nameString != ""){
-            let newUser : User = User(name: nameString, id: DataHandler.sharedManager.getUserID())
-            DataHandler.sharedManager.addUser(user: newUser)
-            DataHandler.sharedManager.setActiveUser(user: newUser)
+            let newUser : User = User(name: nameString, id: UserData.sharedManager.getUserID())
+            UserData.sharedManager.addUser(user: newUser)
+            UserData.sharedManager.setActiveUser(user: newUser)
             performSegue(withIdentifier: "startCaptureSegue", sender:(Any).self)
         }
     }
     @IBAction func loadScreen(_ sender: UIButton) {
-        if DataHandler.sharedManager.users.count > 0{
+        if UserData.sharedManager.users.count > 0{
          performSegue(withIdentifier: "loadSegue", sender:(Any).self)
         }
         else{

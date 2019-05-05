@@ -17,7 +17,7 @@ class LaunchViewController: UIViewController{
     }
     
     @IBAction func testAI(_ sender: UIButton) {
-        if DataHandler.sharedManager.users.count>0 && (DataHandler.sharedManager.getUserByID(id: 1).touches.count) > 0 {
+        if UserData.sharedManager.users.count>0 && (UserData.sharedManager.getUserByID(id: 1).touches.count) > 0 {
             performSegue(withIdentifier: "testAISegue", sender:(Any).self)
         }
     }

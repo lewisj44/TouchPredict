@@ -21,19 +21,19 @@ class SettingsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rateSlider.value =  Float(DataHandler.sharedManager.sampleRate)
-        minTouchesSlider.value =  Float(DataHandler.sharedManager.mintouches)
+        rateSlider.value =  Float(UserData.sharedManager.sampleRate)
+        minTouchesSlider.value =  Float(UserData.sharedManager.mintouches)
         
     }
     
     @IBAction func minTouchesChanged(_ sender: Any) {
         minTouchesLabel.text = Int(minTouchesSlider.value).description
-        DataHandler.sharedManager.mintouches = Int(minTouchesSlider.value)
+        UserData.sharedManager.mintouches = Int(minTouchesSlider.value)
     }
     
     @IBAction func rateChanged(_ sender: Any) {
         rateLabel.text = Int(rateSlider.value).description
-        DataHandler.sharedManager.sampleRate = Int(rateSlider.value)
+        UserData.sharedManager.sampleRate = Int(rateSlider.value)
     }
     @IBAction func closeSettings(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

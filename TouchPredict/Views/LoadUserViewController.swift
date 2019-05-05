@@ -15,7 +15,7 @@ class LoadUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for (id, user) in DataHandler.sharedManager.usersID{
+        for (id, user) in UserData.sharedManager.usersID{
             let nameString = user.name
             pickerData.append(nameString)
         }
@@ -45,8 +45,8 @@ class LoadUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func loadUser(_ sender: UIButton) {
         let selectedRow = picker.selectedRow(inComponent: 0)
         let userName = pickerData[selectedRow]
-        if DataHandler.sharedManager.userNameExists(userName: userName){
-            DataHandler.sharedManager.activeUser = DataHandler.sharedManager.users[userName]!
+        if UserData.sharedManager.userNameExists(userName: userName){
+            UserData.sharedManager.activeUser = UserData.sharedManager.users[userName]!
             performSegue(withIdentifier: "loadedUserSegue", sender:(Any).self)
         }
     }

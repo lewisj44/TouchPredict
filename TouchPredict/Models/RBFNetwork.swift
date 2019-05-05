@@ -9,10 +9,8 @@ public class RBFNetwork {
     var rbf: [Float]
     var output: [Float]
     
-    var numUsers: Int = DataHandler.sharedManager.users.count
-    
-    let learningRate: Float = 0.004
-    let iterations = 500
+    var numUsers: Int = UserData.sharedManager.users.count
+
     var threshold: Float
     
     init(){
@@ -20,17 +18,18 @@ public class RBFNetwork {
         rbf = [Float](repeating: 0, count: numUsers)
         output = [Float](repeating: 0, count: numUsers)
         threshold = 1/Float(numUsers)
-        for (_, user) in DataHandler.sharedManager.usersID{
+        numUsers = UserData.sharedManager.users.count
+        
+        for (_, user) in UserData.sharedManager.usersID{
             user.calculateVariance()
             user.updateBeta()
         }
     }
     
     func predict(user: User)->Int{
-        numUsers = DataHandler.sharedManager.users.count
-        //Hidden Layer 1
+        //Hidden Layer
         rbf = RBFLayer(input: user)
-        print("RBF: " + rbf.description)
+        //Output Layer
         output = rbf
         return outputLayer(input: output)
     }
@@ -39,8 +38,7 @@ public class RBFNetwork {
     //LAYERS
     func RBFLayer(input: User) -> [Float] {
         rbf = [Float](repeating: 0, count: numUsers)
-        for (id, user) in DataHandler.sharedManager.usersID{
-            //let coeff: Float = 1/(user.sigmaF*sqrt(2*Float.pi))
+        for (id, user) in UserData.sharedManager.usersID{
             let r_diff = (input.avgRadius - user.avgRadius)/user.r_stdDev
             let f_diff = (input.avgForce - user.avgForce)/user.f_stdDev
             let distance = sqrt(square(x: r_diff) + square(x: f_diff))

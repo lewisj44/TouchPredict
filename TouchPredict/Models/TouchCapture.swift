@@ -12,21 +12,20 @@ import UIKit
 
 class TouchCapture: UIGestureRecognizer, NSCoding{
     var trackedTouch: UITouch? = nil
-    var activeUser: User = DataHandler.sharedManager.getActiveUser()
-    var samples: [TouchData] = DataHandler.sharedManager.getActiveUser().touches
+    var activeUser: User = UserData.sharedManager.getActiveUser()
+    var samples: [Touch] = UserData.sharedManager.getActiveUser().touches
     
     required init?(coder aDecoder: NSCoder) {
         super.init(target: nil, action: nil)
-        self.samples = DataHandler.sharedManager.getActiveUser().touches
+        self.samples = UserData.sharedManager.getActiveUser().touches
     }
     
     func addSample(for touch: UITouch) {
-        let newSample = TouchData(radius: Float(touch.majorRadius), force: Float(touch.force), id: activeUser.id)
+        let newSample = Touch(radius: Float(touch.majorRadius), force: Float(touch.force), id: activeUser.id)
         activeUser.addTouch(touch: newSample)
     }
     
     func encode(with aCoder: NSCoder) { }
-    // Overridden methods to come...
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         //print("Touch Began")

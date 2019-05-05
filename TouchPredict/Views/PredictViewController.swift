@@ -25,13 +25,13 @@ class PredictViewController: UIViewController {
     var prediction: User = User(name: "Unknown", id: -1)
     var unknown: User = User(name: "Unknown", id: -1)
     var rbfNet: RBFNetwork = RBFNetwork()
-    var previousSize = DataHandler.sharedManager.getPredictedUser().touches.count
+    var previousSize = UserData.sharedManager.getPredictedUser().touches.count
     var samplingRate: Int = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prediction = User(name: "Unknown", id: -1)
-        DataHandler.sharedManager.getPredictedUser().reset()
+        UserData.sharedManager.getPredictedUser().reset()
         predictionLabel.text = "Prediction: " + prediction.name
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) {
@@ -42,7 +42,7 @@ class PredictViewController: UIViewController {
     
     @IBAction func homeButton(_ sender: UIButton) {
         prediction = User(name: "Unknown", id: -1)
-        DataHandler.sharedManager.getPredictedUser().reset()
+        UserData.sharedManager.getPredictedUser().reset()
         performSegue(withIdentifier: "homeFromAISegue", sender:(Any).self)
     }
     
@@ -50,7 +50,7 @@ class PredictViewController: UIViewController {
     func dataTimer(timer:Timer) {
         DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
             DispatchQueue.main.async {
-                if  DataHandler.sharedManager.getPredictedUser().touches.count > 0{
+                if  UserData.sharedManager.getPredictedUser().touches.count > 0{
                     self.update()
                 }
             }
@@ -58,14 +58,14 @@ class PredictViewController: UIViewController {
     }
     
     func update(){
-        let predictUser: User = DataHandler.sharedManager.getPredictedUser()
+        let predictUser: User = UserData.sharedManager.getPredictedUser()
         if touchAdded(){
             updateUserLabel()
             predictUser.touches = predictUser.touches.suffix(samplingRate)
             let minID: Int = rbfNet.predict(user: predictUser)
             updatePredictionLabel(minID: minID, probAr: rbfNet.output)
         }
-        previousSize = DataHandler.sharedManager.getPredictedUser().touches.count
+        previousSize = UserData.sharedManager.getPredictedUser().touches.count
     }
     
     func updatePredictionLabel(minID: Int, probAr: [Float]){
@@ -73,8 +73,8 @@ class PredictViewController: UIViewController {
             prediction = unknown
             predictionConfLabel.text = String(format: "Confidence: %.2f", 100 - probAr.max()!*Float(100)) + "%"
         }
-        if DataHandler.sharedManager.userIDExists(userID: minID){
-            prediction = DataHandler.sharedManager.getUserByID(id: minID)
+        if UserData.sharedManager.userIDExists(userID: minID){
+            prediction = UserData.sharedManager.getUserByID(id: minID)
             predictionConfLabel.text = String(format: "Confidence: %.2f", probAr.max()!*Float(100)) + "%"
         }
         predictionLabel.text = "Prediction: " + prediction.name
@@ -83,7 +83,7 @@ class PredictViewController: UIViewController {
     }
     
     func updateUserLabel(){
-        let predictUser: User = DataHandler.sharedManager.getPredictedUser()
+        let predictUser: User = UserData.sharedManager.getPredictedUser()
         userLabel.text = String(format: "AvgRadius: %.2f AvgForce: %.2f", predictUser.avgRadius, predictUser.avgForce)
     }
     
@@ -94,7 +94,7 @@ class PredictViewController: UIViewController {
     func resetTest(){
         rbfNet = RBFNetwork()
         prediction = User(name: "Unknown", id: -1)
-        DataHandler.sharedManager.getPredictedUser().reset()
+        UserData.sharedManager.getPredictedUser().reset()
         predictionLabel.text = "Prediction: " + prediction.name
         userLabel.text = "AvgRadius: 0.00 AvgForce: 0.00"
         predictionLabel.text = "Prediction: " + prediction.name
@@ -103,7 +103,7 @@ class PredictViewController: UIViewController {
     }
     
     func touchAdded()->Bool{
-        return self.previousSize != DataHandler.sharedManager.getPredictedUser().touches.count
+        return self.previousSize != UserData.sharedManager.getPredictedUser().touches.count
     }
 }
 

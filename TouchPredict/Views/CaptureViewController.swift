@@ -9,8 +9,8 @@
 import UIKit
 import Foundation
 
-class TouchViewController: UIViewController {
-    var activeUser: User = DataHandler.sharedManager.getActiveUser()
+class CaptureViewController: UIViewController {
+    var activeUser: User = UserData.sharedManager.getActiveUser()
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var touchLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
@@ -22,7 +22,7 @@ class TouchViewController: UIViewController {
         self.saveButton.isHidden = true
         self.testButton.isHidden = true
         updateData()
-        userLabel.text = "Active User: " + DataHandler.sharedManager.getActiveUser().name
+        userLabel.text = "Active User: " + UserData.sharedManager.getActiveUser().name
         _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) {
             timer in
     
@@ -41,9 +41,9 @@ class TouchViewController: UIViewController {
     func updateData() {
         touchLabel.text = "Touches: " + String(activeUser.touches.count)
         dataLabel.text = String(format: "AvgRadius: %.2f AvgForce: %.2f", activeUser.avgRadius, activeUser.avgForce)
-        if activeUser.touches.count > DataHandler.sharedManager.mintouches {
+        if activeUser.touches.count > UserData.sharedManager.mintouches {
             self.saveButton.isHidden = false
-            if DataHandler.sharedManager.users.count > 1{
+            if UserData.sharedManager.users.count > 1{
                 self.testButton.isHidden = false
             }
         }
@@ -57,7 +57,7 @@ class TouchViewController: UIViewController {
     }
     
     @IBAction func test(_ sender: UIButton) {
-        if activeUser.touches.count > 1 && DataHandler.sharedManager.users.count > 1{
+        if activeUser.touches.count > 1 && UserData.sharedManager.users.count > 1{
             performSegue(withIdentifier: "testSegue", sender:(Any).self)
         }
     }

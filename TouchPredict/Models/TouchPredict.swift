@@ -12,20 +12,19 @@ import UIKit
 
 class TouchPredict: UIGestureRecognizer, NSCoding{
     var trackedTouch: UITouch? = nil
-    var predictUser: User = DataHandler.sharedManager.getPredictedUser()
-    var samples: [TouchData] = DataHandler.sharedManager.getPredictedUser().touches
+    var predictUser: User = UserData.sharedManager.getPredictedUser()
+    var samples: [Touch] = UserData.sharedManager.getPredictedUser().touches
     
     required init?(coder aDecoder: NSCoder) {
         super.init(target: nil, action: nil)
     }
     
     func addSample(for touch: UITouch) {
-        let newSample = TouchData(radius: Float(touch.majorRadius), force: Float(touch.force), id: predictUser.id)
+        let newSample = Touch(radius: Float(touch.majorRadius), force: Float(touch.force), id: predictUser.id)
         predictUser.addTouch(touch: newSample)
     }
     
     func encode(with aCoder: NSCoder) { }
-    // Overridden methods to come...
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         //print("Touch Began")

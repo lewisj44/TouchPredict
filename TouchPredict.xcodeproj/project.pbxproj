@@ -13,15 +13,15 @@
 		AA60E88F226CEEC1000ACDA7 /* RBFNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA60E88E226CEEC1000ACDA7 /* RBFNetwork.swift */; };
 		AA7341FA22740CF900F3DC50 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7341F922740CF900F3DC50 /* SettingsViewController.swift */; };
 		AA8A2012226A6D9E0003C052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2011226A6D9E0003C052 /* AppDelegate.swift */; };
-		AA8A2014226A6D9E0003C052 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2013226A6D9E0003C052 /* NameViewController.swift */; };
+		AA8A2014226A6D9E0003C052 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2013226A6D9E0003C052 /* UserViewController.swift */; };
 		AA8A2017226A6D9E0003C052 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8A2015226A6D9E0003C052 /* Main.storyboard */; };
 		AA8A2019226A6DA00003C052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8A2018226A6DA00003C052 /* Assets.xcassets */; };
 		AA8A201C226A6DA00003C052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8A201A226A6DA00003C052 /* LaunchScreen.storyboard */; };
-		AA8A2040226A880B0003C052 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A203F226A880B0003C052 /* TouchViewController.swift */; };
+		AA8A2040226A880B0003C052 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A203F226A880B0003C052 /* CaptureViewController.swift */; };
 		AA8A2042226A8D820003C052 /* TouchCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2041226A8D820003C052 /* TouchCapture.swift */; };
 		AA8A2044226A93C50003C052 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2043226A93C50003C052 /* User.swift */; };
-		AA8A2046226A93DA0003C052 /* TouchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2045226A93DA0003C052 /* TouchData.swift */; };
-		AA8A2048226A96A30003C052 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2047226A96A30003C052 /* DataHandler.swift */; };
+		AA8A2046226A93DA0003C052 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2045226A93DA0003C052 /* Touch.swift */; };
+		AA8A2048226A96A30003C052 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2047226A96A30003C052 /* UserData.swift */; };
 		AA8A204A226AD23E0003C052 /* TouchPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2049226AD23E0003C052 /* TouchPredict.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,18 +50,18 @@
 		AA7341F922740CF900F3DC50 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AA8A200E226A6D9E0003C052 /* Touch AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8A2011226A6D9E0003C052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA8A2013226A6D9E0003C052 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		AA8A2013226A6D9E0003C052 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		AA8A2016226A6D9E0003C052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA8A2018226A6DA00003C052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA8A201B226A6DA00003C052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA8A201D226A6DA00003C052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA8A2022226A6DA00003C052 /* TouchPredictTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchPredictTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8A202D226A6DA00003C052 /* TouchPredictUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchPredictUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA8A203F226A880B0003C052 /* TouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
+		AA8A203F226A880B0003C052 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		AA8A2041226A8D820003C052 /* TouchCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchCapture.swift; sourceTree = "<group>"; };
 		AA8A2043226A93C50003C052 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AA8A2045226A93DA0003C052 /* TouchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchData.swift; sourceTree = "<group>"; };
-		AA8A2047226A96A30003C052 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		AA8A2045226A93DA0003C052 /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
+		AA8A2047226A96A30003C052 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AA8A2049226AD23E0003C052 /* TouchPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPredict.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,9 +95,9 @@
 			children = (
 				AA60E88E226CEEC1000ACDA7 /* RBFNetwork.swift */,
 				AA8A2041226A8D820003C052 /* TouchCapture.swift */,
+				AA8A2045226A93DA0003C052 /* Touch.swift */,
 				AA8A2043226A93C50003C052 /* User.swift */,
-				AA8A2045226A93DA0003C052 /* TouchData.swift */,
-				AA8A2047226A96A30003C052 /* DataHandler.swift */,
+				AA8A2047226A96A30003C052 /* UserData.swift */,
 				AA8A2049226AD23E0003C052 /* TouchPredict.swift */,
 			);
 			path = Models;
@@ -106,8 +106,8 @@
 		AA0106AC226B973700F40058 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AA8A2013226A6D9E0003C052 /* NameViewController.swift */,
-				AA8A203F226A880B0003C052 /* TouchViewController.swift */,
+				AA8A2013226A6D9E0003C052 /* UserViewController.swift */,
+				AA8A203F226A880B0003C052 /* CaptureViewController.swift */,
 				AA60E878226BA9B9000ACDA7 /* PredictViewController.swift */,
 				AA60E88C226CE6F3000ACDA7 /* LaunchViewController.swift */,
 				AA23B9E522700BB400D50CF9 /* LoadUserViewController.swift */,
@@ -289,17 +289,17 @@
 			files = (
 				AA8A2042226A8D820003C052 /* TouchCapture.swift in Sources */,
 				AA60E88D226CE6F3000ACDA7 /* LaunchViewController.swift in Sources */,
-				AA8A2048226A96A30003C052 /* DataHandler.swift in Sources */,
+				AA8A2048226A96A30003C052 /* UserData.swift in Sources */,
 				AA60E879226BA9B9000ACDA7 /* PredictViewController.swift in Sources */,
 				AA60E88F226CEEC1000ACDA7 /* RBFNetwork.swift in Sources */,
-				AA8A2014226A6D9E0003C052 /* NameViewController.swift in Sources */,
+				AA8A2014226A6D9E0003C052 /* UserViewController.swift in Sources */,
 				AA8A204A226AD23E0003C052 /* TouchPredict.swift in Sources */,
 				AA23B9E622700BB400D50CF9 /* LoadUserViewController.swift in Sources */,
 				AA8A2012226A6D9E0003C052 /* AppDelegate.swift in Sources */,
-				AA8A2046226A93DA0003C052 /* TouchData.swift in Sources */,
+				AA8A2046226A93DA0003C052 /* Touch.swift in Sources */,
 				AA7341FA22740CF900F3DC50 /* SettingsViewController.swift in Sources */,
 				AA8A2044226A93C50003C052 /* User.swift in Sources */,
-				AA8A2040226A880B0003C052 /* TouchViewController.swift in Sources */,
+				AA8A2040226A880B0003C052 /* CaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

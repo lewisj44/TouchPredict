@@ -25,7 +25,7 @@ class User{
     var r_stdDev: Float
     var f_stdDev: Float
     
-    var touches: [TouchData] = []
+    var touches: [Touch] = []
     var previousSize = -1;
     
     
@@ -39,45 +39,31 @@ class User{
         self.beta = 0
         self.sigma = 0
         
-        
         self.r_variance = 0
         self.r_stdDev = 0
         self.f_variance = 0
         self.f_stdDev = 0
     }
     
-    func addTouch(touch: TouchData){
+    func addTouch(touch: Touch){
         touches.append(touch)
         self.moveCentroid()
         self.previousSize = touches.count
     }
     
     func moveCentroid(){
-        var radiusSum : Float = 0.0
-        var forceSum : Float = 0.0
-        for touch in touches{
-            radiusSum += touch.radius
-            forceSum += touch.force
-        }
-        avgRadius = radiusSum/Float(touches.count)
-        avgForce = forceSum/Float(touches.count)
+        avgRadius = Float(touches.compactMap { $0.radius }.reduce(0, +))/Float(touches.count)
+        avgForce = Float(touches.compactMap { $0.force }.reduce(0, +))/Float(touches.count)
     }
     
     func updateBeta(){
         var sigmaSum: Float = 0
-        var maxDist: Float = 0
         for touch in touches{
             let r_diff = (touch.radius - avgRadius)/r_stdDev
             let f_diff = (touch.force - avgForce)/f_stdDev
-            print(name + " " + r_diff.description)
-            print(name + " " + f_diff.description)
-            let distance = sqrt(square(x: r_diff) + square(x: f_diff))
-            sigmaSum += distance
-            if distance > maxDist { maxDist = distance }
+            sigmaSum += sqrt(square(x: r_diff) + square(x: f_diff))
         }
-       
         self.sigma = (sigmaSum/Float(touches.count))
-        //self.sigma = maxDist/(2*Float(DataHandler.sharedManager.users.count))
         self.beta = 1/(2*square(x: sigma))
     }
     
@@ -88,7 +74,7 @@ class User{
         var radiusVariance: Float = 0
         var forceVariance: Float = 0
         
-        for (_, user) in DataHandler.sharedManager.usersID{
+        for (_, user) in UserData.sharedManager.usersID{
             let rdiff: Float = user.avgRadius - radiusMean
             let fdiff: Float = user.avgForce - forceMean
             
@@ -97,6 +83,7 @@ class User{
         }
         self.r_variance = radiusVariance/Float(touches.count)
         self.f_variance = forceVariance/Float(touches.count)
+        
         self.r_stdDev = sqrt(r_variance)
         self.f_stdDev = sqrt(f_variance)
     }

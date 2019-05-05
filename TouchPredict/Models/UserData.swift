@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class DataHandler{
+class UserData{
     //MARK: Properties
     var users: [String: User] = [:]
     var usersID: [Int: User] = [:]
@@ -27,9 +27,9 @@ class DataHandler{
         sampleRate = 25
     }
     
-    class var sharedManager: DataHandler {
+    class var sharedManager: UserData {
         struct Static {
-            static let instance = DataHandler()
+            static let instance = UserData()
         }
         return Static.instance
     }
