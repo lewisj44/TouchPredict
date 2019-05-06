@@ -6,7 +6,6 @@ import Foundation
 import UIKit
 
 public class RBFNetwork {
-    //var weights: [[Float]]
     var rbf: [Float]
     var passcodeRBF: [Float]
     var output: [Float]
@@ -15,7 +14,6 @@ public class RBFNetwork {
     var threshold: Float
     
     init(){
-        //weights = [[Float]](repeating: [Float](repeating: 1, count: numUsers), count: numUsers)
         rbf = [Float](repeating: 0, count: numUsers)
         passcodeRBF = [Float](repeating: 0, count: UserData.sharedManager.digits.count)
         output = [Float](repeating: 0, count: numUsers)
@@ -38,7 +36,7 @@ public class RBFNetwork {
         return outputLayer(input: output)
     }
     
-    func predict(touch: Touch)->Int{
+    func predictPasscode(touch: Touch)->Int{
         numUsers = UserData.sharedManager.users.count
         //Hidden Layer
         rbf = passcodeRBFLayer(input: touch)

@@ -27,7 +27,7 @@ class PasscodeCapture: UIGestureRecognizer, NSCoding{
         if(activeUser.passcode.count < 6){
             let newSample = Touch(location: touch.location(in: touch.view), radius: Float(touch.majorRadius), force: Float(touch.force), id: activeUser.id)
             activeUser.addTouch(touch: newSample)
-            activeUser.passcode += String(rbfNet.predict(touch: newSample))
+            activeUser.passcode += String(rbfNet.predictPasscode(touch: newSample))
             print(activeUser.passcode)
         }
     }

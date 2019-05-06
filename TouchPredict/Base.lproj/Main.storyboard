@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojU-5T-asQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2254" y="-196"/>
+            <point key="canvasLocation" x="-2462" y="-453"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="S2h-5G-xrW">
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pym-8l-S0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2156" y="799.2503748125938"/>
+            <point key="canvasLocation" x="-2463" y="500"/>
         </scene>
         <!--Load User View Controller-->
         <scene sceneID="K7d-ag-wd5">
@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wra-SG-P6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-1473"/>
+            <point key="canvasLocation" x="-1423" y="-1458"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -411,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1015.2" y="-715.59220389805103"/>
+            <point key="canvasLocation" x="-1423" y="-454"/>
         </scene>
         <!--Capture View Controller-->
         <scene sceneID="OiR-VD-JtP">
@@ -552,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZA-a1-oX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="-520.38980509745136"/>
+            <point key="canvasLocation" x="778" y="-454"/>
         </scene>
         <!--Predict View Controller-->
         <scene sceneID="DNF-5M-LIf">
@@ -693,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cB-fZ-ArT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.8000000000000007" y="217.24137931034485"/>
+            <point key="canvasLocation" x="-1423" y="500"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oOo-ib-IBg">
@@ -718,7 +718,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOi-aI-pNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <gestureRecognizer cancelsTouchesInView="NO" id="y6C-f1-qor" customClass="TouchCapture" customModule="Touch_AI" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-519.04047976011998"/>
+            <point key="canvasLocation" x="1694" y="-455"/>
         </scene>
         <!--Passcode View Controller-->
         <scene sceneID="EaY-tI-nGs">
@@ -833,7 +833,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBC-zX-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="175.86206896551727"/>
+            <point key="canvasLocation" x="-329" y="-454"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h9x-q3-Ue6">
@@ -858,7 +858,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87F-w6-fvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <gestureRecognizer id="hUW-Kd-FMw" customClass="TouchPredict" customModule="Touch_AI" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="34" y="945"/>
+            <point key="canvasLocation" x="-330" y="499"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fKs-pE-rZO">
@@ -877,7 +877,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTc-HC-ND4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <gestureRecognizer id="pUV-ei-3Bd" customClass="PasscodeCapture" customModule="Touch_AI" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="196"/>
+            <point key="canvasLocation" x="-356" y="-1082"/>
         </scene>
     </scenes>
     <resources>
@@ -888,8 +888,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="fGC-g5-lGd"/>
         <segue reference="qPM-cq-MGb"/>
-        <segue reference="pUm-MS-9Gw"/>
+        <segue reference="bwb-Uu-r9I"/>
         <segue reference="Znj-3b-15a"/>
-        <segue reference="rRi-Rm-5C3"/>
+        <segue reference="7eC-iz-UxC"/>
     </inferredMetricsTieBreakers>
 </document>
