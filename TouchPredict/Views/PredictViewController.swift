@@ -33,8 +33,8 @@ class PredictViewController: UIViewController {
         prediction = User(name: "Unknown", id: -1)
         UserData.sharedManager.getPredictedUser().reset()
         predictionLabel.text = "Prediction: " + prediction.name
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) {
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) {
             timer in
             self.dataTimer(timer: timer)
         }
@@ -63,21 +63,21 @@ class PredictViewController: UIViewController {
             updateUserLabel()
             predictUser.touches = predictUser.touches.suffix(samplingRate)
             let minID: Int = rbfNet.predict(user: predictUser)
-            updatePredictionLabel(minID: minID, probAr: rbfNet.output)
+            updatePredictionLabel(minID: minID)
         }
         previousSize = UserData.sharedManager.getPredictedUser().touches.count
     }
     
-    func updatePredictionLabel(minID: Int, probAr: [Float]){
+    func updatePredictionLabel(minID: Int){
         if(minID == -1){
             prediction = unknown
-            predictionConfLabel.text = String(format: "Confidence: %.2f", 100 - probAr.max()!*Float(100)) + "%"
+            predictionConfLabel.text = String(format: "Confidence: %.2f", 100 - rbfNet.output.max()!*Float(100)) + "%"
         }
         if UserData.sharedManager.userIDExists(userID: minID){
             prediction = UserData.sharedManager.getUserByID(id: minID)
-            predictionConfLabel.text = String(format: "Confidence: %.2f", probAr.max()!*Float(100)) + "%"
+            predictionConfLabel.text = String(format: "Confidence: %.2f", rbfNet.output.max()!*Float(100)) + "%"
         }
-        predictionLabel.text = "Prediction: " + prediction.name
+        predictionLabel.text = "Prediction: " + prediction.name + " Passcode: " + prediction.passcode
         predictionStatsLabel.text = String(format: "AvgRadius: %.2f AvgForce: %.2f", prediction.avgRadius, prediction.avgForce)
         
     }

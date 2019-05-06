@@ -47,7 +47,6 @@ class CaptureViewController: UIViewController {
                 self.testButton.isHidden = false
             }
         }
-        
     }
     
     @IBAction func saveData(_ sender: UIButton) {
@@ -62,5 +61,8 @@ class CaptureViewController: UIViewController {
         }
     }
     
+    @IBAction func clicked(_ sender: UIButton) {
+        sender.isHidden = true
+    }
 }
 

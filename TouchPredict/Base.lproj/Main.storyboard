@@ -406,6 +406,7 @@
                         <outlet property="startButton" destination="wjW-86-72s" id="zj0-An-zJd"/>
                         <segue destination="KUH-Ka-pjL" kind="show" identifier="startCaptureSegue" id="Qgf-rR-lDs"/>
                         <segue destination="uCH-Kf-RR1" kind="show" identifier="loadSegue" id="riq-mK-vvP"/>
+                        <segue destination="Mql-lb-HVx" kind="show" identifier="passcodeSegue" id="pMf-q0-wa8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -551,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZA-a1-oX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="-519.49025487256381"/>
+            <point key="canvasLocation" x="773.60000000000002" y="-520.38980509745136"/>
         </scene>
         <!--Predict View Controller-->
         <scene sceneID="DNF-5M-LIf">
@@ -699,7 +700,7 @@
             <objects>
                 <viewController id="qSo-BA-9Hw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pHn-vn-Sex">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="373"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14902611301369864" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -718,6 +719,121 @@
                 <gestureRecognizer cancelsTouchesInView="NO" id="y6C-f1-qor" customClass="TouchCapture" customModule="Touch_AI" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1709.5999999999999" y="-519.04047976011998"/>
+        </scene>
+        <!--Passcode View Controller-->
+        <scene sceneID="EaY-tI-nGs">
+            <objects>
+                <viewController storyboardIdentifier="PasscodeView" id="Mql-lb-HVx" customClass="PasscodeViewController" customModule="Touch_AI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cfU-Mk-Ssv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passcode" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-15-JVl">
+                                <rect key="frame" x="-188" y="0.0" width="750" height="667"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-j1-7Qv">
+                                <rect key="frame" x="0.0" y="188" width="375" height="373"/>
+                                <connections>
+                                    <segue destination="Yq2-Md-ruh" kind="embed" id="8C5-FR-sHH"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iat-qj-bcC">
+                                <rect key="frame" x="80" y="136" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="KKA-pe-z7O"/>
+                                    <constraint firstAttribute="height" constant="20" id="mQd-zH-hH6"/>
+                                </constraints>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rya-Le-zdU">
+                                <rect key="frame" x="119" y="136" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="yeV-tA-lzL"/>
+                                </constraints>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsy-dn-mG8">
+                                <rect key="frame" x="157" y="136" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="wKh-yD-Hcj"/>
+                                </constraints>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFF-nE-DqE">
+                                <rect key="frame" x="196" y="136" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="rcb-5C-Zc6"/>
+                                </constraints>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7U-fu-aOE">
+                                <rect key="frame" x="234" y="136" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="yTi-Xy-G6e"/>
+                                </constraints>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-7j-6gs">
+                                <rect key="frame" x="273" y="136" width="22" height="20"/>
+                                <state key="normal" image="IMG_4668"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnu-9H-gfu">
+                                <rect key="frame" x="223" y="595" width="129" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="TUo-9I-sDk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="cancel:" destination="Mql-lb-HVx" eventType="touchUpInside" id="eeE-8V-j8q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8uJ-15-JVl" firstAttribute="centerX" secondItem="Fb5-j1-7Qv" secondAttribute="centerX" id="1O0-W4-ToL"/>
+                            <constraint firstItem="rya-Le-zdU" firstAttribute="top" secondItem="Fsy-dn-mG8" secondAttribute="top" id="3oe-MN-78H"/>
+                            <constraint firstItem="nFF-nE-DqE" firstAttribute="bottom" secondItem="L7U-fu-aOE" secondAttribute="bottom" id="4aq-ye-51Q"/>
+                            <constraint firstItem="Hnu-9H-gfu" firstAttribute="leading" secondItem="cY6-Kn-P1c" secondAttribute="leading" constant="223" id="9Nf-MY-aAS"/>
+                            <constraint firstAttribute="trailing" secondItem="Fb5-j1-7Qv" secondAttribute="trailing" id="9r6-1I-Okf"/>
+                            <constraint firstItem="Hnu-9H-gfu" firstAttribute="top" secondItem="Fb5-j1-7Qv" secondAttribute="bottom" constant="34" id="9w0-jX-tvd"/>
+                            <constraint firstItem="cY6-Kn-P1c" firstAttribute="trailing" secondItem="Vwr-7j-6gs" secondAttribute="trailing" constant="80" id="DyK-iM-6F2"/>
+                            <constraint firstItem="Fsy-dn-mG8" firstAttribute="leading" secondItem="rya-Le-zdU" secondAttribute="trailing" constant="16" id="Eow-WJ-Ek9"/>
+                            <constraint firstItem="rya-Le-zdU" firstAttribute="bottom" secondItem="Fsy-dn-mG8" secondAttribute="bottom" id="G0q-Nu-gQs"/>
+                            <constraint firstItem="L7U-fu-aOE" firstAttribute="leading" secondItem="nFF-nE-DqE" secondAttribute="trailing" constant="16" id="GmT-vS-PQP"/>
+                            <constraint firstItem="iat-qj-bcC" firstAttribute="top" secondItem="rya-Le-zdU" secondAttribute="top" id="H6T-3h-fEH"/>
+                            <constraint firstItem="L7U-fu-aOE" firstAttribute="top" secondItem="Vwr-7j-6gs" secondAttribute="top" id="I3C-TX-EXL"/>
+                            <constraint firstItem="L7U-fu-aOE" firstAttribute="bottom" secondItem="Vwr-7j-6gs" secondAttribute="bottom" id="KVt-d1-A9v"/>
+                            <constraint firstItem="Fb5-j1-7Qv" firstAttribute="leading" secondItem="cfU-Mk-Ssv" secondAttribute="leading" id="Kw7-eF-G1O"/>
+                            <constraint firstItem="Fsy-dn-mG8" firstAttribute="top" secondItem="nFF-nE-DqE" secondAttribute="top" id="N1l-TD-LYK"/>
+                            <constraint firstItem="nFF-nE-DqE" firstAttribute="top" secondItem="L7U-fu-aOE" secondAttribute="top" id="Nsh-Lf-e8K"/>
+                            <constraint firstItem="Fb5-j1-7Qv" firstAttribute="top" secondItem="iat-qj-bcC" secondAttribute="bottom" constant="32" id="PLc-qj-8AV"/>
+                            <constraint firstItem="cY6-Kn-P1c" firstAttribute="trailing" secondItem="Hnu-9H-gfu" secondAttribute="trailing" constant="23" id="U90-TT-bja"/>
+                            <constraint firstItem="Fsy-dn-mG8" firstAttribute="bottom" secondItem="nFF-nE-DqE" secondAttribute="bottom" id="Uu5-ts-MEu"/>
+                            <constraint firstItem="iat-qj-bcC" firstAttribute="top" secondItem="cY6-Kn-P1c" secondAttribute="top" constant="116" id="VRF-ZE-5E0"/>
+                            <constraint firstItem="cY6-Kn-P1c" firstAttribute="bottom" secondItem="Hnu-9H-gfu" secondAttribute="bottom" constant="16" id="eQQ-wo-p44"/>
+                            <constraint firstItem="iat-qj-bcC" firstAttribute="leading" secondItem="cY6-Kn-P1c" secondAttribute="leading" constant="80" id="gyv-51-5f8"/>
+                            <constraint firstItem="Vwr-7j-6gs" firstAttribute="leading" secondItem="L7U-fu-aOE" secondAttribute="trailing" constant="17" id="hVn-aT-BGy"/>
+                            <constraint firstItem="iat-qj-bcC" firstAttribute="bottom" secondItem="rya-Le-zdU" secondAttribute="bottom" id="lRc-ht-bD4"/>
+                            <constraint firstItem="nFF-nE-DqE" firstAttribute="leading" secondItem="Fsy-dn-mG8" secondAttribute="trailing" constant="17" id="oh7-1j-ZVG"/>
+                            <constraint firstItem="8uJ-15-JVl" firstAttribute="bottom" secondItem="cY6-Kn-P1c" secondAttribute="bottom" id="t7m-fx-Zu4"/>
+                            <constraint firstItem="rya-Le-zdU" firstAttribute="leading" secondItem="iat-qj-bcC" secondAttribute="trailing" constant="17" id="vUd-EK-Ehp"/>
+                            <constraint firstItem="8uJ-15-JVl" firstAttribute="top" secondItem="cfU-Mk-Ssv" secondAttribute="top" id="wEv-y3-c8g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cY6-Kn-P1c"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="circles" destination="iat-qj-bcC" collectionClass="NSMutableArray" id="Fgd-5O-Bq3"/>
+                        <outletCollection property="circles" destination="rya-Le-zdU" collectionClass="NSMutableArray" id="3og-9V-1Sg"/>
+                        <outletCollection property="circles" destination="Fsy-dn-mG8" collectionClass="NSMutableArray" id="zjw-dZ-TbX"/>
+                        <outletCollection property="circles" destination="nFF-nE-DqE" collectionClass="NSMutableArray" id="bQq-Ma-tlp"/>
+                        <outletCollection property="circles" destination="L7U-fu-aOE" collectionClass="NSMutableArray" id="isl-4K-CZX"/>
+                        <outletCollection property="circles" destination="Vwr-7j-6gs" collectionClass="NSMutableArray" id="Pjt-uG-PYX"/>
+                        <outletCollection property="circles" destination="Hnu-9H-gfu" collectionClass="NSMutableArray" id="c3d-BX-RiL"/>
+                        <segue destination="KUH-Ka-pjL" kind="show" identifier="passcodeComplete" id="WJD-ZD-2zK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bBC-zX-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="175.86206896551727"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h9x-q3-Ue6">
@@ -744,15 +860,36 @@
             </objects>
             <point key="canvasLocation" x="34" y="945"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fKs-pE-rZO">
+            <objects>
+                <viewController id="Yq2-Md-ruh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2v-aM-fSg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pUV-ei-3Bd" appends="YES" id="QvB-5P-e3W"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTc-HC-ND4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <gestureRecognizer id="pUV-ei-3Bd" customClass="PasscodeCapture" customModule="Touch_AI" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="2662" y="196"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="IMG_4668" width="41" height="38"/>
         <image name="icons8-settings-filled-100" width="100" height="100"/>
+        <image name="passcode" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fGC-g5-lGd"/>
-        <segue reference="Qgf-rR-lDs"/>
-        <segue reference="FfZ-lh-5ui"/>
-        <segue reference="CKb-NX-Vhb"/>
+        <segue reference="qPM-cq-MGb"/>
+        <segue reference="pUm-MS-9Gw"/>
+        <segue reference="Znj-3b-15a"/>
         <segue reference="rRi-Rm-5C3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,8 @@
 		AA8A2046226A93DA0003C052 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2045226A93DA0003C052 /* Touch.swift */; };
 		AA8A2048226A96A30003C052 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2047226A96A30003C052 /* UserData.swift */; };
 		AA8A204A226AD23E0003C052 /* TouchPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A2049226AD23E0003C052 /* TouchPredict.swift */; };
+		AAF3A139227F740A00B3D12A /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3A138227F740A00B3D12A /* PasscodeViewController.swift */; };
+		AAF3A13B227F768700B3D12A /* PasscodeCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3A13A227F768700B3D12A /* PasscodeCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		AA8A2045226A93DA0003C052 /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
 		AA8A2047226A96A30003C052 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AA8A2049226AD23E0003C052 /* TouchPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPredict.swift; sourceTree = "<group>"; };
+		AAF3A138227F740A00B3D12A /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		AAF3A13A227F768700B3D12A /* PasscodeCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				AA60E88E226CEEC1000ACDA7 /* RBFNetwork.swift */,
 				AA8A2041226A8D820003C052 /* TouchCapture.swift */,
+				AAF3A13A227F768700B3D12A /* PasscodeCapture.swift */,
 				AA8A2045226A93DA0003C052 /* Touch.swift */,
 				AA8A2043226A93C50003C052 /* User.swift */,
 				AA8A2047226A96A30003C052 /* UserData.swift */,
@@ -112,6 +117,7 @@
 				AA60E88C226CE6F3000ACDA7 /* LaunchViewController.swift */,
 				AA23B9E522700BB400D50CF9 /* LoadUserViewController.swift */,
 				AA7341F922740CF900F3DC50 /* SettingsViewController.swift */,
+				AAF3A138227F740A00B3D12A /* PasscodeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,10 +297,12 @@
 				AA60E88D226CE6F3000ACDA7 /* LaunchViewController.swift in Sources */,
 				AA8A2048226A96A30003C052 /* UserData.swift in Sources */,
 				AA60E879226BA9B9000ACDA7 /* PredictViewController.swift in Sources */,
+				AAF3A139227F740A00B3D12A /* PasscodeViewController.swift in Sources */,
 				AA60E88F226CEEC1000ACDA7 /* RBFNetwork.swift in Sources */,
 				AA8A2014226A6D9E0003C052 /* UserViewController.swift in Sources */,
 				AA8A204A226AD23E0003C052 /* TouchPredict.swift in Sources */,
 				AA23B9E622700BB400D50CF9 /* LoadUserViewController.swift in Sources */,
+				AAF3A13B227F768700B3D12A /* PasscodeCapture.swift in Sources */,
 				AA8A2012226A6D9E0003C052 /* AppDelegate.swift in Sources */,
 				AA8A2046226A93DA0003C052 /* Touch.swift in Sources */,
 				AA7341FA22740CF900F3DC50 /* SettingsViewController.swift in Sources */,

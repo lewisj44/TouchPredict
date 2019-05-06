@@ -10,20 +10,26 @@ import UIKit
 
 
 
-class TouchCapture: UIGestureRecognizer, NSCoding{
-    
+class PasscodeCapture: UIGestureRecognizer, NSCoding{
     var trackedTouch: UITouch? = nil
     var activeUser: User = UserData.sharedManager.getActiveUser()
     var samples: [Touch] = UserData.sharedManager.getActiveUser().touches
+    var rbfNet: RBFNetwork = RBFNetwork()
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(target: nil, action: nil)
         self.samples = UserData.sharedManager.getActiveUser().touches
+        
     }
-   
+    
     func addSample(for touch: UITouch) {
-        let newSample = Touch(radius: Float(touch.majorRadius), force: Float(touch.force), id: activeUser.id)
-        activeUser.addTouch(touch: newSample)
+        if(activeUser.passcode.count < 6){
+            let newSample = Touch(location: touch.location(in: touch.view), radius: Float(touch.majorRadius), force: Float(touch.force), id: activeUser.id)
+            activeUser.addTouch(touch: newSample)
+            activeUser.passcode += String(rbfNet.predict(touch: newSample))
+            print(activeUser.passcode)
+        }
     }
     
     func encode(with aCoder: NSCoder) { }
@@ -51,7 +57,6 @@ class TouchCapture: UIGestureRecognizer, NSCoding{
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.addSample(for: touches.first!)
         state = .changed
     }
     

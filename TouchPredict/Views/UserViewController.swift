@@ -70,7 +70,7 @@ class UserViewController: UIViewController, UITextFieldDelegate{
             let newUser : User = User(name: nameString, id: UserData.sharedManager.getUserID())
             UserData.sharedManager.addUser(user: newUser)
             UserData.sharedManager.setActiveUser(user: newUser)
-            performSegue(withIdentifier: "startCaptureSegue", sender:(Any).self)
+            performSegue(withIdentifier: "passcodeSegue", sender:(Any).self)
         }
     }
     @IBAction func loadScreen(_ sender: UIButton) {

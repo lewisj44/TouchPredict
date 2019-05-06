@@ -18,6 +18,10 @@ class UserData{
     var userID : Int = 0
     var mintouches: Int = 50
     var sampleRate: Int = 25
+    var digits: [String: [Float]] = [ "1": [90, 60],  "2": [190, 60],  "3": [290, 60],
+                                      "4": [90, 140], "5": [190, 140], "6": [290, 140],
+                                      "7": [90, 230], "8": [190, 230], "9": [290, 230],
+                                      "0": [190, 320]]
     
     
     init(){

@@ -12,6 +12,7 @@ class User{
     //MARK: Properties
     var name: String
     var id: Int
+    var passcode: String
     
     var avgRadius: Float
     var avgForce: Float
@@ -43,6 +44,7 @@ class User{
         self.r_stdDev = 0
         self.f_variance = 0
         self.f_stdDev = 0
+        self.passcode = ""
     }
     
     func addTouch(touch: Touch){
